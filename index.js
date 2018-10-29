@@ -9,6 +9,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const message = require("./router/message");
 app.use("/message", message);
 
-app.listen(9001, function() {
-  console.log("Server Express Ready!");
+app.listen(process.env.SERVICE_PORT || 9001, function() {
+  console.log(`Server Express Ready on port ${ process.env.SERVICE_PORT || 9001 }!`);
 });

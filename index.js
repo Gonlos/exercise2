@@ -6,8 +6,8 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const messageInterface = require("./router/messageInterface");
-app.use("/", messageInterface);
+const message = require("./router/message");
+app.use("/message", message);
 
 app.listen(9001, function() {
   console.log("Server Express Ready!");

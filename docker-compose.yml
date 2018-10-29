@@ -6,6 +6,7 @@ services:
     environment:
       - NODE_ENV=${NODE_ENV}
     build: .
+    image: exercise1
     ports:
       - "9001:9001"
   messageapp:

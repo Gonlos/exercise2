@@ -15,12 +15,8 @@ class MessageApp {
       })
       .catch(error => {
         // console.log("error",error)
-        let data
-        if(error.response==undefined){
-          data=error
-        }else{
-          data.error.response.data
-        }
+        let data;
+        data = error.response == undefined ? error : error.response.data;
         return {
           status: 500,
           data

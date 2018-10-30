@@ -35,7 +35,7 @@ class MessageApp {
     }
   
     return axios
-      .post("/", { destination, message })
+      .post("/", { destination, body:message })
       .then(response => {
         // console.log("ok",response)
         return {

@@ -3,8 +3,9 @@ const router = express.Router();
 const MessageApp = require("../MessageApp");
 
 router.post("/", (req, res, next) => {
-  const { destination, body } = req.body;
-  MessageApp.emit({ destination, body }).then(response => {
+  const { destination, message } = req.body;
+  MessageApp.send({ destination, message })
+  .then(response => {
     res
       .status(response.status)
       .send(
